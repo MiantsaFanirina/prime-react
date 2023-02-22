@@ -1,7 +1,19 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 function App() {
-  return <h1>Hello World!</h1>
+  return <BrowserRouter>
+      <Routes>
+          <Route path='/'>
+            <Route index element={<h1>Page d'acceuil</h1>}></Route>
+            <Route path="login" element={<Login/>}></Route>
+            <Route path="signup" element={<Signup/>}></Route>
+          </Route>
+      </Routes>
+      
+  </BrowserRouter>
 }
 
 export default App;
